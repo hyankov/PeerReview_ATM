@@ -78,6 +78,8 @@ All drivers adhere and will adhere to the predefined hardware interfaces assembl
 
 **Technical requirements**
 
+- VisualStudio 2015 or compatible is to be used
+- .NET ver 4.5.2
 - Reference only the DLLs in <code>References\Compiled</code>. Their source code is provided for documentation only and cannot be modified.
 - It is **not** required to swap the bank API or hardware drivers after deployment
 - The user interface can be whatever you choose - Console App, WPF, Web front-end, Voice & Sound, etc
