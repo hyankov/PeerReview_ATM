@@ -26,8 +26,9 @@ Basic workflow should be followed:
    - Cancel - the _card reader_ ejects the card, workflow is complete
 4. Withdraw:
    - Allow only if the selected amount is available in the ATM. Otherwise cancel.
-   - First charge the bank account (acc# stored in the card), using the provided bank APIs
-   - Then <code>dispense</code> cash from the _cash dispenser_
+   - Get the bank account # out of the card
+   - Charge the bank account, using the provided bank APIs (Note: the bank may decline the charge - handle this)
+   - <code>dispense</code> cash from the _cash dispenser_
    - Then locally store a record, which includes:
      - a picture - **if _camera_ is available**
      - the amount of money withdrawn
