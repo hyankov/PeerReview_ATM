@@ -1,4 +1,4 @@
-# Peer Review - ATM
+# Peer Review - "ATM Software"
 
 **Overview**
 
@@ -91,7 +91,7 @@ All drivers adhere and will adhere to the predefined hardware interfaces assembl
 
 **Other**
 
-- Use the <code>PeerReview.ATM.HardwareDrivers.Interfaces -> CardFactory</code> class to get a 'wallet" (list of <code>Card</code> emulations).
+- Use the <code>PeerReview.ATM.HardwareDrivers.Interfaces -> CardFactory</code> class to get a "wallet" (list of <code>Card</code> emulations).
 - The APIs are fully documented using XML, including the card PINs
 
 _Code in this repository is subject to change_
