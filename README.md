@@ -19,7 +19,7 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 Basic workflow should be followed:
 1. The user inserts a card (simulated by the <code>Card</code> class) in the _card reader_ (a hardware device)
 2. The user must enter the correct PIN to the card
-   - The _card reader_ should 'eat' (hold) the card if there are three (3) authentication fails in a row
+   - The _card reader_ should 'eat' (hold) the card if there are three (3) authentication fails in a row. Also a picture should be <code>taken</code> if there is a _camera_ available and it should be stored as a record.
 3. The ATM should allow the user to:
    - Withdraw - the amount of money cannot be larger than the machine can dispense
      - A predefined amount of money (20, 40, 80, 100, 160, 200 or 400)
