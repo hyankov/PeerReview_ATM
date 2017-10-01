@@ -6,7 +6,8 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 
 **What will be commented on the peer-review**
 
-- Architectural decisions, code layering
+- Solution structure, code layering
+- Architectural decisions
 - Code quality, separation of concerns
 - Code flexibility to changes
 - Maintainability and extension
