@@ -6,9 +6,11 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 
 **What will be commented on the peer-review**
 
-- Code quality
+- Architectural decisions, code layering
+- Code quality, separation of concerns
 - Code flexibility to changes
-- Developer's rationale behind implementation decisions
+- Maintainability and extension
+- Developer's rationale behind every implementation decisions
 - Abiltiy to follow specifications
 
 **Functional Requirements**
@@ -45,7 +47,7 @@ The UI should allow the user to start over, without restarting the application.
 **Non-functional requirements**
 
 - The ATM should keep a local LOG of everything that happens.
-- No unhandled exceptions should cause the application to crash
+- No unhandled exceptions should cause the application to crash. The ATM should be resilient to all kinds of errors.
 - The implementation should allow for easy swap from one bank API to another (i.e. from <code>Bank1</code> to <code>Bank2</code>)
 - The implementation should allow for easy swap of the user interface - e.g. switch from Console App, to WPF or Web frontend.
 - The implementation should allow for easy swap of any of the hardware drivers or the lack of optional hardware such as:
@@ -58,7 +60,7 @@ The UI should allow the user to start over, without restarting the application.
 
 **Hardware**
 
-The application can be installed on ATMs with varying hardware. At the moment we target the following know hardware, for which drivers are provided in this repository:
+The application can be installed on ATMs with varying hardware. At the moment we target the following known hardware, for which drivers are provided in this repository:
 - Card Reader - model 'Model234'
 - Printer - model 'Hyosung Nautilus'
 - Cash Dispenser - model 'Money Rain 2017'
@@ -66,21 +68,25 @@ The application can be installed on ATMs with varying hardware. At the moment we
 
 Drivers to those devices are provided under <code>References\Compiled</code>. If the application will be installed on a different hardware, new drivers will be provided as DLLs.
 
-All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code
+All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code>
    
  **Bank APIs**
  
- Two bank API implementations are provided - <code>Bank1</code> and <code>Bank2</code>. They should be referenced by DLLs. The ATM should support both, but will need only one of those implementations at runtime.
+ Two bank API implementations are provided - <code>Bank1</code> and <code>Bank2</code>. They should be referenced by DLLs. The ATM should support both, but will need only one of those implementations at runtime. You can choose which one you use in runtime.
 
 **Technical requirements**
 
 - Reference only the DLLs in <code>References\Compiled</code>. Their source code is provided for documentation only and cannot be modified.
-- It is **not** required to swap the bank API after installation
-- The user interface can be whatever you decide - Console App, Web front-end, Voice & Sound, etc
+- It is **not** required to swap the bank API or hardware drivers after deployment
+- The user interface can be whatever you choose - Console App, WPF, Web front-end, Voice & Sound, etc
 - Use Microsoft SQL Server to store the ATM records
    - Provide SQL schema creation script (as .sql)
 - Use files for logging information
 - Using third-party NuGet packages is **allowed**
 
+**Other**
+
+- Use the <code>PeerReview.ATM.HardwareDrivers.Interfaces -> CardFactory</code> class to get a 'wallet" (list of <code>Card</code> emulations).
+- The APIs are fully documented using XML, including the card PINs
 
 _Code in this repository is subject to change_
