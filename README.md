@@ -23,7 +23,7 @@ Basic workflow should be followed:
      - A custom amount (any positive integer)
    - Cancel - the _card reader_ ejects the card, workflow is complete
 4. Withdraw:
-   - Allow only if the selected amount is available in the ATM
+   - Allow only if the selected amount is available in the ATM. Otherwise cancel.
    - First charge the bank account (acc# stored in the card), using the provided bank APIs
    - Then <code>dispense</code> cash from the _cash dispenser_
    - Then locally store a record, which includes:
@@ -40,16 +40,17 @@ Basic workflow should be followed:
     - Amount
     - Date
 
-Additionally, the ATM should keep a local LOG of everything that happens.
-
-The user interface can be whatever you decide - Console App, Web front-end, Voice & Sound, etc
+The UI should allow the user to start over, without restarting the application.
 
 **Non-functional requirements**
 
+- The ATM should keep a local LOG of everything that happens.
+- No unhandled exceptions should cause the application to crash
+- The implementation should allow for easy swap from one bank API to another (i.e. from <code>Bank1</code> to <code>Bank2</code>)
 - The implementation should allow for easy swap of the user interface - e.g. switch from Console App, to WPF or Web frontend.
 - The implementation should allow for easy swap of any of the hardware drivers or the lack of optional hardware such as:
-  - Camera
-  - Printer
+   - Camera
+   - Printer
 - Printing a receipt is not critical and failure to print should not be catastrophic
 - Taking a picture is not critical and failure to take a picture should not be catastrophic
 - The ATM should **not** dispense money if the card's bank account cannot be charged
@@ -57,7 +58,7 @@ The user interface can be whatever you decide - Console App, Web front-end, Voic
 
 **Hardware**
 
-The application can be installed on ATMs with varying hardware. At the moment we know of the following hardware:
+The application can be installed on ATMs with varying hardware. At the moment we target the following know hardware, for which drivers are provided in this repository:
 - Card Reader - model 'Model234'
 - Printer - model 'Hyosung Nautilus'
 - Cash Dispenser - model 'Money Rain 2017'
@@ -65,13 +66,21 @@ The application can be installed on ATMs with varying hardware. At the moment we
 
 Drivers to those devices are provided under <code>References\Compiled</code>. If the application will be installed on a different hardware, new drivers will be provided as DLLs.
 
-All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code>.
+All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code
+   
+ **Bank APIs**
+ 
+ Two bank API implementations are provided - <code>Bank1</code> and <code>Bank2</code>. They should be referenced by DLLs. The ATM should support both, but will need only one of those implementations at runtime.
 
 **Technical requirements**
+
+- Reference only the DLLs in <code>References\Compiled</code>. Their source code is provided for documentation only and cannot be modified.
+- It is **not** required to swap the bank API after installation
+- The user interface can be whatever you decide - Console App, Web front-end, Voice & Sound, etc
 - Use Microsoft SQL Server to store the ATM records
-- Provide SQL schema creation script (as .sql)
+   - Provide SQL schema creation script (as .sql)
 - Use files for logging information
-- Third-party NuGet packages are **allowed**
+- Using third-party NuGet packages is **allowed**
 
 
 _Code in this repository is subject to change_
