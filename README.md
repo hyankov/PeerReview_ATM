@@ -70,7 +70,9 @@ The application can be installed on ATMs with varying hardware. At the moment we
 
 Drivers to those devices are provided under <code>References\Compiled</code>. If the application will be installed on a different hardware, new drivers will be provided as DLLs.
 
-All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code>
+All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code>.
+
+Hardware being "available" means that the instance of its driver is not <code>null</code>.
    
  **Bank APIs**
  
