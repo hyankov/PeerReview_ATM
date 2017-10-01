@@ -73,6 +73,8 @@ All drivers adhere and will adhere to the predefined hardware interfaces assembl
  **Bank APIs**
  
  Two bank API implementations are provided - <code>Bank1</code> and <code>Bank2</code>. They should be referenced by DLLs. The ATM should support both, but will need only one of those implementations at runtime. You can choose which one you use in runtime.
+ 
+ There is no common interface provided between the bank APIs.
 
 **Technical requirements**
 
