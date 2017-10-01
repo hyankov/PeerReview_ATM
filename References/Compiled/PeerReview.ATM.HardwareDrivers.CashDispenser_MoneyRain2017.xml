@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017</name>
+    </assembly>
+    <members>
+        <member name="T:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver">
+            <summary>
+            A hardware driver to the cash dispenser device of the ATM
+            <para>[DEV INFO] There is 600 initial balance in the ATM.</para>
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="P:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.AvailableAmount">
+            <summary>
+            Gets the available amount of cash in the ATM
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.Dispense(System.Int32)">
+            <summary>
+            Dispenses cash
+            </summary>
+            <param name="amount">The amount of cash to be dispensed. Must be a positive numbr.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="amount"/> is less or equal to 0.
+            </exception>
+            <exception cref="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException">
+            If <see cref="P:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.AvailableAmount"/> is less than <paramref name="amount"/>.
+            </exception>
+        </member>
+    </members>
+</doc>

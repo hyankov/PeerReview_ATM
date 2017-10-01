@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PeerReview.ATM.BankProviders.Bank1</name>
+    </assembly>
+    <members>
+        <member name="T:PeerReview.ATM.BankProviders.Bank1.Bank1AccountProviderProxy">
+            <summary>
+            Proxy to Bank1
+            <para>[DEV INFO] Available accounts:</para>
+            <para>{account number} - {balance}</para>
+            <para>0000 0000 0000 0001 - 1520.56</para>
+            <para>0000 0000 0000 0002 - 320.78</para>
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.BankProviders.Bank1.Bank1AccountProviderProxy.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.BankProviders.Bank1.Bank1AccountProviderProxy.Debit(System.String,System.Decimal,System.Guid@)">
+            <summary>
+            Deducts the <paramref name="amount"/> from the balance of the account.
+            </summary>
+            <param name="accountNumber">The number of the account</param>
+            <param name="amount">The amount to deduct. Must be a positive number</param>
+            <param name="transactionReference">The transaction reference</param>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="accountNumber"/> is empty
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="accountNumber"/> is not recognized
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="amount"/> is not a positive number
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="amount"/> is less than the available balance of the account
+            </exception>
+            <returns>The remaining balance in the account</returns>
+        </member>
+        <member name="M:PeerReview.ATM.BankProviders.Bank1.Bank1AccountProviderProxy.RetrieveBalance(System.String)">
+            <summary>
+            Gets the balance of the account.
+            </summary>
+            <param name="accountNumber">The number of the account</param>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="accountNumber"/> is empty
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="accountNumber"/> is not recognized
+            </exception>
+            <returns>The balance of the account</returns>
+        </member>
+    </members>
+</doc>

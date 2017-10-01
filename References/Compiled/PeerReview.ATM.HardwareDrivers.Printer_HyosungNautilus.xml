@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus</name>
+    </assembly>
+    <members>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus.PrinterHyosungNautilusDriver">
+            <summary>
+            A hardware driver to the printer device of the ATM
+            <para>[DEV INFO] There is enough paper for 2 receipts</para>
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus.PrinterHyosungNautilusDriver.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus.PrinterHyosungNautilusDriver.PrintReceipt(System.String)">
+            <summary>
+            Prints a receipt
+            </summary>
+            <param name="text">The text to print</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="text"/> is empty.</exception>
+        </member>
+    </members>
+</doc>

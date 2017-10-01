@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus", "PeerReview.ATM.HardwareDrivers.Printer\PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus.csproj", "{0125F558-83E2-48A4-AD8D-607F85E64EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017", "PeerReview.ATM.HardwareDrivers.MoneyDispenser\PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.csproj", "{7EB936F8-5B8D-4649-BBDC-500175F37BF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeerReview.ATM.HardwareDrivers.CardReader_Model234", "PeerReview.ATM.HardwareDrivers.CardReader\PeerReview.ATM.HardwareDrivers.CardReader_Model234.csproj", "{4F648599-6923-4CC0-8F3B-2B403F6A85AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeerReview.ATM.HardwareDrivers.Camera_MegaPX", "PeerReview.ATM.HardwareDrivers.Camera\PeerReview.ATM.HardwareDrivers.Camera_MegaPX.csproj", "{4A453E9B-5BE5-48C1-A044-A0C6D187627E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeerReview.ATM.HardwareDrivers.Interfaces", "PeerReview.ATM.HardwareDrivers.Interfaces\PeerReview.ATM.HardwareDrivers.Interfaces.csproj", "{B6A4EC71-DB8C-4D46-9EDA-FFDF84985871}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{0467E0CC-ECCC-44FE-82A3-5A86D26FE25A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{67CDC1B5-C8A2-4B99-A508-039D8BFC672A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0125F558-83E2-48A4-AD8D-607F85E64EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0125F558-83E2-48A4-AD8D-607F85E64EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0125F558-83E2-48A4-AD8D-607F85E64EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0125F558-83E2-48A4-AD8D-607F85E64EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB936F8-5B8D-4649-BBDC-500175F37BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB936F8-5B8D-4649-BBDC-500175F37BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB936F8-5B8D-4649-BBDC-500175F37BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB936F8-5B8D-4649-BBDC-500175F37BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F648599-6923-4CC0-8F3B-2B403F6A85AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F648599-6923-4CC0-8F3B-2B403F6A85AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F648599-6923-4CC0-8F3B-2B403F6A85AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F648599-6923-4CC0-8F3B-2B403F6A85AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A453E9B-5BE5-48C1-A044-A0C6D187627E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A453E9B-5BE5-48C1-A044-A0C6D187627E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A453E9B-5BE5-48C1-A044-A0C6D187627E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A453E9B-5BE5-48C1-A044-A0C6D187627E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A4EC71-DB8C-4D46-9EDA-FFDF84985871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A4EC71-DB8C-4D46-9EDA-FFDF84985871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A4EC71-DB8C-4D46-9EDA-FFDF84985871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A4EC71-DB8C-4D46-9EDA-FFDF84985871}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0125F558-83E2-48A4-AD8D-607F85E64EA1} = {67CDC1B5-C8A2-4B99-A508-039D8BFC672A}
+		{7EB936F8-5B8D-4649-BBDC-500175F37BF7} = {67CDC1B5-C8A2-4B99-A508-039D8BFC672A}
+		{4F648599-6923-4CC0-8F3B-2B403F6A85AE} = {67CDC1B5-C8A2-4B99-A508-039D8BFC672A}
+		{4A453E9B-5BE5-48C1-A044-A0C6D187627E} = {67CDC1B5-C8A2-4B99-A508-039D8BFC672A}
+		{B6A4EC71-DB8C-4D46-9EDA-FFDF84985871} = {0467E0CC-ECCC-44FE-82A3-5A86D26FE25A}
+	EndGlobalSection
+EndGlobal

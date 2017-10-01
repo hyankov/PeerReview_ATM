@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PeerReview.ATM.HardwareDrivers.CardReader_Model234</name>
+    </assembly>
+    <members>
+        <member name="T:PeerReview.ATM.HardwareDrivers.CardReader_Model234.CardReaderModel234Driver">
+             <summary>
+             A hardware driver to the card reader device
+            
+             [DEV INFO] Available cards:
+             <para>{card number} - {pin}</para>
+             <para>0001 - 1000</para>
+             <para>0002 - 2000</para>
+             [DEV INFO] Available accounts:
+             <para>{card number} - {account number}</para>
+             <para>0001 - 0000 0000 0000 0001</para>
+             <para>0002 - 0000 0000 0000 0002</para>
+             </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.CardReader_Model234.CardReaderModel234Driver.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.CardReader_Model234.CardReaderModel234Driver.AuthenticateCard(System.String,System.Int32)">
+            <summary>
+            Authenticates the card with a PIN
+            </summary>
+            <param name="cardNumber">The card number</param>
+            <param name="pin">The PIN to the card</param>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is empty
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is not recognized
+            </exception>
+            <returns>true - if the PIN matches the card, otherwise false</returns>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.CardReader_Model234.CardReaderModel234Driver.ReadAccountNumber(System.String,System.Int32)">
+            <summary>
+            Reads the account number of the card
+            </summary>
+            <param name="cardNumber">The card number</param>
+            <param name="pin">The PIN to the card</param>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is empty
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is not recognized
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is not authenticated
+            </exception>
+            <returns>The account number associated with the card</returns>
+        </member>
+    </members>
+</doc>

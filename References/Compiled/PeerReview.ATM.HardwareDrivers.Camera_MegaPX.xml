@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PeerReview.ATM.HardwareDrivers.Camera_MegaPX</name>
+    </assembly>
+    <members>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Camera_MegaPX.CameraMegaPXDriver">
+            <summary>
+            A hardware driver to the camera
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Camera_MegaPX.CameraMegaPXDriver.TakePicture">
+            <summary>
+            Takes a picture with the camera
+            </summary>
+            <returns>A byte array representing a <see cref="T:System.Drawing.Bitmap"/></returns>
+        </member>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Camera_MegaPX.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PeerReview.ATM.HardwareDrivers.Camera_MegaPX.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PeerReview.ATM.HardwareDrivers.Camera_MegaPX.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PeerReview.ATM.HardwareDrivers.Camera_MegaPX.Resources.UserPhoto">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

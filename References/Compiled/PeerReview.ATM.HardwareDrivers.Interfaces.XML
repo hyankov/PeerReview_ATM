@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PeerReview.ATM.HardwareDrivers.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.BaseCashDispenserException">
+            <summary>
+            A base class for all Cash Dispenser exceptions
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.BaseCashDispenserException.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.BaseCashDispenserException.#ctor(System.String)">
+            <summary>
+            Creates a new instance and initializes the message of the exception
+            </summary>
+            <param name="message">The message of the exception</param>
+        </member>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException">
+            <summary>
+            An exception representing insufficient available cash in the dispenser
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException.#ctor(System.String)">
+            <summary>
+            Creates a new instance and initialize the message
+            </summary>
+            <param name="message">The message of the exception</param>
+        </member>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.IPrinterDriver">
+            <summary>
+            Interface to the printers
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.IPrinterDriver.PrintReceipt(System.String)">
+            <summary>
+            Prints a receipt
+            </summary>
+            <param name="text">The text to print</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="text"/> is empty.</exception>
+        </member>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.ICashDispenserDriver">
+            <summary>
+            Interface to the cash dispensers
+            </summary>
+        </member>
+        <member name="P:PeerReview.ATM.HardwareDrivers.Interfaces.ICashDispenserDriver.AvailableAmount">
+            <summary>
+            Gets the available amount of cash in the ATM
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.ICashDispenserDriver.Dispense(System.Int32)">
+            <summary>
+            Dispenses cash
+            </summary>
+            <param name="amount">The amount of cash to be dispensed. Must be a positive numbr.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="amount"/> is less or equal to 0.
+            </exception>
+            <exception cref="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException">
+            If <see cref="P:PeerReview.ATM.HardwareDrivers.Interfaces.ICashDispenserDriver.AvailableAmount"/> is less than <paramref name="amount"/>.
+            </exception>
+        </member>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.ICardReaderDriver">
+            <summary>
+            Interface to the card readers
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.ICardReaderDriver.AuthenticateCard(System.String,System.Int32)">
+            <summary>
+            Authenticates the card with a PIN
+            </summary>
+            <param name="cardNumber">The card number</param>
+            <param name="pin">The PIN to the card</param>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is empty
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is not recognized
+            </exception>
+            <returns>true - if the PIN matches the card, otherwise false</returns>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.ICardReaderDriver.ReadAccountNumber(System.String,System.Int32)">
+            <summary>
+            Reads the account number of the card
+            </summary>
+            <param name="cardNumber">The card number</param>
+            <param name="pin">The PIN to the card</param>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is empty
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is not recognized
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            When the <paramref name="cardNumber"/> is not authenticated
+            </exception>
+            <returns>The account number associated with the card</returns>
+        </member>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.ICameraDriver">
+            <summary>
+            Interface to the cameras
+            </summary>
+        </member>
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.ICameraDriver.TakePicture">
+            <summary>
+            Takes a picture with the camera
+            </summary>
+            <returns>A byte array representing a <see cref="T:System.Drawing.Bitmap"/></returns>
+        </member>
+    </members>
+</doc>
