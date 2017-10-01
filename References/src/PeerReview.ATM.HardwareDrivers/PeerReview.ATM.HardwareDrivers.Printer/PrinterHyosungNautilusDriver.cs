@@ -2,7 +2,7 @@
 {
     using System;
     using System.Diagnostics;
-    using Interfaces;
+    using Interfaces.Drivers;
 
     /// <summary>
     /// A hardware driver to the printer device of the ATM

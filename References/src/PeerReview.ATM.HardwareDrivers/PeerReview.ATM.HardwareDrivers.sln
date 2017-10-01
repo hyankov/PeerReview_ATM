@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeerReview.ATM.HardwareDriv
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{0467E0CC-ECCC-44FE-82A3-5A86D26FE25A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{67CDC1B5-C8A2-4B99-A508-039D8BFC672A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driver Implementations", "Driver Implementations", "{67CDC1B5-C8A2-4B99-A508-039D8BFC672A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

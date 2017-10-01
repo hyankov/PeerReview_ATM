@@ -5,21 +5,32 @@
     using global::PeerReview.ATM.HardwareDrivers.Camera_MegaPX;
     using global::PeerReview.ATM.HardwareDrivers.CardReader_Model234;
     using global::PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017;
+    using global::PeerReview.ATM.HardwareDrivers.Interfaces.Cards;
     using global::PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus;
 
     internal class Program
     {
         private static void Main(string[] args)
         {
-            Console.Write("Card number: ");
-            var cardNumber = Console.ReadLine();
+            var cards = CardFactory.GetWallet();
 
-            Console.Write("PIN: ");
+            Console.WriteLine("Choose card from your wallet: ");
+            int i = 1;
+            foreach (var crd in cards)
+            {
+                Console.WriteLine("{0}) {1}", i, crd.CardNumber);
+                i++;
+            }
+
+            var card = cards[int.Parse(Console.ReadKey().KeyChar.ToString()) - 1];
+
+            Console.Write("\nPIN: ");
             var pin = int.Parse(Console.ReadLine());
 
             var cardReader = new CardReaderModel234Driver();
+            cardReader.InsertCard(card);
 
-            if (cardReader.AuthenticateCard(cardNumber, pin))
+            if (cardReader.Authenticate(pin))
             {
                 Console.Write("Amount: ");
                 var amount = int.Parse(Console.ReadLine());
@@ -27,7 +38,7 @@
                 var cashDispenser = new CashDispenserMoneyRain2017Driver();
                 if (amount <= cashDispenser.AvailableAmount)
                 {
-                    var accountNumber = cardReader.ReadAccountNumber(cardNumber, pin);
+                    var accountNumber = cardReader.ReadAccountNumber(pin);
                     var cameraDriver = new CameraMegaPXDriver();
                     var picture = cameraDriver.TakePicture();
                     Guid transactionReference;
@@ -48,6 +59,8 @@
                     {
                         Console.WriteLine();
                     }
+
+                    cardReader.EjectCard();
                 }
                 else
                 {
@@ -56,6 +69,7 @@
             }
             else
             {
+                cardReader.EatCard();
                 Console.WriteLine("Authentication failed!");
             }
 

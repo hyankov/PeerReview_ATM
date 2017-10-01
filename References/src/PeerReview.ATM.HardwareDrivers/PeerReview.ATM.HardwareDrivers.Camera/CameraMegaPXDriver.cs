@@ -4,7 +4,7 @@
     using System.Drawing;
     using System.Drawing.Imaging;
     using System.IO;
-    using Interfaces;
+    using Interfaces.Drivers;
 
     /// <summary>
     /// A hardware driver to the camera

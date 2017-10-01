@@ -33,22 +33,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PeerReview.ATM.BankProviders.Bank1">
+    <Reference Include="PeerReview.ATM.BankProviders.Bank1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Compiled\PeerReview.ATM.BankProviders.Bank1.dll</HintPath>
     </Reference>
-    <Reference Include="PeerReview.ATM.BankProviders.Bank2">
+    <Reference Include="PeerReview.ATM.BankProviders.Bank2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Compiled\PeerReview.ATM.BankProviders.Bank2.dll</HintPath>
     </Reference>
-    <Reference Include="PeerReview.ATM.HardwareDrivers.Camera_MegaPX">
+    <Reference Include="PeerReview.ATM.HardwareDrivers.Camera_MegaPX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Compiled\PeerReview.ATM.HardwareDrivers.Camera_MegaPX.dll</HintPath>
     </Reference>
-    <Reference Include="PeerReview.ATM.HardwareDrivers.CardReader_Model234">
+    <Reference Include="PeerReview.ATM.HardwareDrivers.CardReader_Model234, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Compiled\PeerReview.ATM.HardwareDrivers.CardReader_Model234.dll</HintPath>
     </Reference>
-    <Reference Include="PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017">
+    <Reference Include="PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Compiled\PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.dll</HintPath>
     </Reference>
-    <Reference Include="PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus">
+    <Reference Include="PeerReview.ATM.HardwareDrivers.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Compiled\PeerReview.ATM.HardwareDrivers.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Compiled\PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus.dll</HintPath>
     </Reference>
     <Reference Include="System" />

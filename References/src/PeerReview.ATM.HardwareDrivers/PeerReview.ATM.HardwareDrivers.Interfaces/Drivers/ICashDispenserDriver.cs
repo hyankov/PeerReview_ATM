@@ -1,4 +1,4 @@
-﻿namespace PeerReview.ATM.HardwareDrivers.Interfaces
+﻿namespace PeerReview.ATM.HardwareDrivers.Interfaces.Drivers
 {
     using System;
     using PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions;

@@ -4,10 +4,10 @@
     using System.Collections.Generic;
 
     /// <summary>
-    /// Proxy to Bank2
+    /// Wrapper to Bank2
     /// <para>[DEV INFO] Available accounts:</para>
     /// <para>{account number} - {balance}</para>
-    /// <para>0000 0000 0000 0001 - 1520.56</para>
+    /// <para>0000 0000 0000 0001 - 1,520.56</para>
     /// <para>0000 0000 0000 0002 - 320.78</para>
     /// </summary>
     public class Bank2AccountProviderWrapper
