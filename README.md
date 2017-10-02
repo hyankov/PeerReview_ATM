@@ -48,6 +48,8 @@ Basic workflow should be followed:
 
 The UI should allow the user to start over, without restarting the application.
 
+![alt text](https://i.imgur.com/7dIfgGL.png)
+
 **Non-functional requirements**
 
 - The ATM should keep a local LOG of everything that happens.
