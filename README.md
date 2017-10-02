@@ -14,6 +14,8 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 - Developer's rationale behind every implementation decisions
 - Abiltiy to follow specifications
 
+Visual appeal of the UI **will not** be commented.
+
 **Functional Requirements**
 
 Basic workflow should be followed:
@@ -54,6 +56,7 @@ The UI should allow the user to start over, without restarting the application.
 
 - The ATM should keep a local LOG of everything that happens.
 - No unhandled exceptions should cause the application to crash. The ATM should be resilient to all kinds of errors.
+- The implementation should allow for easy extension with new functionality (e.g. <code>Change Pin</code>, <code>Print Statement</code>, etc
 - The implementation should allow for easy swap from one bank API to another (i.e. from <code>Bank1</code> to <code>Bank2</code>)
 - The implementation should allow for easy swap of the user interface - e.g. switch from Console App, to WPF or Web frontend.
 - The implementation should allow for easy swap of any of the hardware drivers or the lack of optional hardware such as:
