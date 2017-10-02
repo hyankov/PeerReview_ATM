@@ -1,8 +1,10 @@
 # Peer Review - "ATM Software"
 
+![ATM](http://media.cutimes.com/cutimes/article/2017/03/02/atm-crop-600x338.jpg)
+
 **Overview**
 
-Implement software for controlling an ATM, using the Windows stack. ATM hardware & bank interaction is provided as compiled assemblies.
+Implement software for controlling an ATM, using the Windows stack. ATM hardware & bank interaction is provided via [compiled assemblies](https://github.com/hyankov/PeerReview_ATM/tree/master/References/Compiled).
 
 **What will be commented on the peer-review**
 
@@ -14,6 +16,8 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 - Developer's rationale behind every implementation decisions
 - Abiltiy to follow specifications
 
+Visual appeal of the UI **will not** be commented.
+
 **Functional Requirements**
 
 Basic workflow should be followed:
@@ -23,8 +27,10 @@ Basic workflow should be followed:
 3. The ATM should allow the user to:
    - Withdraw - the amount of money cannot be larger than the machine can dispense
      - A predefined amount of money (20, 40, 80, 100, 160, 200 or 400)
-     - A custom amount (any positive integer)
+     - A custom amount
    - Cancel - the _card reader_ ejects the card, workflow is complete
+   
+   **Note:** the software must correctly control the _cash dispenser_ driver - it must tell it specifically what amount of what kind of banknotes should be dispensed. **It is desired that the largest banknotes are dispensed first, with priority**
 4. Withdraw:
    - Allow only if the selected amount is available in the ATM. Otherwise cancel.
    - Get the bank account # out of the card
@@ -46,10 +52,13 @@ Basic workflow should be followed:
 
 The UI should allow the user to start over, without restarting the application.
 
+![workflow diagram](https://i.imgur.com/7dIfgGL.png)
+
 **Non-functional requirements**
 
 - The ATM should keep a local LOG of everything that happens.
 - No unhandled exceptions should cause the application to crash. The ATM should be resilient to all kinds of errors.
+- The implementation should allow for easy extension with new functionality (e.g. <code>Change Pin</code>, <code>Print Statement</code>, etc
 - The implementation should allow for easy swap from one bank API to another (i.e. from <code>Bank1</code> to <code>Bank2</code>)
 - The implementation should allow for easy swap of the user interface - e.g. switch from Console App, to WPF or Web frontend.
 - The implementation should allow for easy swap of any of the hardware drivers or the lack of optional hardware such as:
