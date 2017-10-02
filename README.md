@@ -4,7 +4,7 @@
 
 **Overview**
 
-Implement software for controlling an ATM, using the Windows stack. ATM hardware & bank interaction is provided as compiled assemblies.
+Implement software for controlling an ATM, using the Windows stack. ATM hardware & bank interaction is provided via [compiled assemblies](https://github.com/hyankov/PeerReview_ATM/tree/master/References/Compiled).
 
 **What will be commented on the peer-review**
 
