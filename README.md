@@ -1,4 +1,4 @@
-# Peer Review - ATM
+# Peer Review - "ATM Software"
 
 **Overview**
 
@@ -6,7 +6,8 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 
 **What will be commented on the peer-review**
 
-- Architectural decisions, code layering
+- Solution structure, code layering
+- Architectural decisions
 - Code quality, separation of concerns
 - Code flexibility to changes
 - Maintainability and extension
@@ -18,7 +19,7 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 Basic workflow should be followed:
 1. The user inserts a card (simulated by the <code>Card</code> class) in the _card reader_ (a hardware device)
 2. The user must enter the correct PIN to the card
-   - The _card reader_ should 'eat' (hold) the card if there are three (3) authentication fails in a row
+   - The _card reader_ should 'eat' (hold) the card if there are three (3) authentication fails in a row. Also a picture should be <code>taken</code> if there is a _camera_ available and it should be stored as a record.
 3. The ATM should allow the user to:
    - Withdraw - the amount of money cannot be larger than the machine can dispense
      - A predefined amount of money (20, 40, 80, 100, 160, 200 or 400)
@@ -26,8 +27,9 @@ Basic workflow should be followed:
    - Cancel - the _card reader_ ejects the card, workflow is complete
 4. Withdraw:
    - Allow only if the selected amount is available in the ATM. Otherwise cancel.
-   - First charge the bank account (acc# stored in the card), using the provided bank APIs
-   - Then <code>dispense</code> cash from the _cash dispenser_
+   - Get the bank account # out of the card
+   - Charge the bank account, using the provided bank APIs (Note: the bank may decline the charge - handle this)
+   - <code>dispense</code> cash from the _cash dispenser_
    - Then locally store a record, which includes:
      - a picture - **if _camera_ is available**
      - the amount of money withdrawn
@@ -68,7 +70,9 @@ The application can be installed on ATMs with varying hardware. At the moment we
 
 Drivers to those devices are provided under <code>References\Compiled</code>. If the application will be installed on a different hardware, new drivers will be provided as DLLs.
 
-All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code>
+All drivers adhere and will adhere to the predefined hardware interfaces assembly <code>PeerReview.ATM.HardwareDrivers.Interfaces</code>.
+
+Hardware being "available" means that the instance of its driver is not <code>null</code>.
    
  **Bank APIs**
  
@@ -78,6 +82,8 @@ All drivers adhere and will adhere to the predefined hardware interfaces assembl
 
 **Technical requirements**
 
+- VisualStudio 2015 or compatible is to be used
+- .NET ver 4.5.2
 - Reference only the DLLs in <code>References\Compiled</code>. Their source code is provided for documentation only and cannot be modified.
 - It is **not** required to swap the bank API or hardware drivers after deployment
 - The user interface can be whatever you choose - Console App, WPF, Web front-end, Voice & Sound, etc
@@ -88,7 +94,7 @@ All drivers adhere and will adhere to the predefined hardware interfaces assembl
 
 **Other**
 
-- Use the <code>PeerReview.ATM.HardwareDrivers.Interfaces -> CardFactory</code> class to get a 'wallet" (list of <code>Card</code> emulations).
+- Use the <code>PeerReview.ATM.HardwareDrivers.Interfaces -> CardFactory</code> class to get a "wallet" (list of <code>Card</code> emulations).
 - The APIs are fully documented using XML, including the card PINs
 
 _Code in this repository is subject to change_
