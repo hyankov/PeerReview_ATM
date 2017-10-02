@@ -1,5 +1,7 @@
 # Peer Review - "ATM Software"
 
+![ATM](http://media.cutimes.com/cutimes/article/2017/03/02/atm-crop-600x338.jpg)
+
 **Overview**
 
 Implement software for controlling an ATM, using the Windows stack. ATM hardware & bank interaction is provided as compiled assemblies.
@@ -50,7 +52,7 @@ Basic workflow should be followed:
 
 The UI should allow the user to start over, without restarting the application.
 
-![alt text](https://i.imgur.com/7dIfgGL.png)
+![workflow diagram](https://i.imgur.com/7dIfgGL.png)
 
 **Non-functional requirements**
 
