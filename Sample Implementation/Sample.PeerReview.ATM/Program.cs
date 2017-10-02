@@ -1,10 +1,13 @@
 ﻿namespace Sample.PeerReview.ATM
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using global::PeerReview.ATM.BankProviders.Bank1;
     using global::PeerReview.ATM.HardwareDrivers.Camera_MegaPX;
     using global::PeerReview.ATM.HardwareDrivers.CardReader_Model234;
     using global::PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017;
+    using global::PeerReview.ATM.HardwareDrivers.Interfaces;
     using global::PeerReview.ATM.HardwareDrivers.Interfaces.Cards;
     using global::PeerReview.ATM.HardwareDrivers.Printer_HyosungNautilus;
 
@@ -32,11 +35,11 @@
 
             if (cardReader.Authenticate(pin))
             {
-                Console.Write("Amount: ");
+                Console.Write("Amount (must be / 10): ");
                 var amount = int.Parse(Console.ReadLine());
 
                 var cashDispenser = new CashDispenserMoneyRain2017Driver();
-                if (amount <= cashDispenser.AvailableAmount)
+                if (amount <= cashDispenser.Inventory.Sum(a => a.Value * (int)a.Key))
                 {
                     var accountNumber = cardReader.ReadAccountNumber(pin);
                     var cameraDriver = new CameraMegaPXDriver();
@@ -44,7 +47,9 @@
                     Guid transactionReference;
                     var bank1AccountProviderProxy = new Bank1AccountProviderProxy();
                     bank1AccountProviderProxy.Debit(accountNumber, amount, out transactionReference);
-                    cashDispenser.Dispense(amount);
+                    var bankNotes = new Dictionary<BanknoteKind, int>();
+                    bankNotes.Add(BanknoteKind._10, amount / 10);
+                    cashDispenser.Dispense(bankNotes);
                     Console.WriteLine("Money withdrawn. Reference: " + transactionReference);
 
                     Console.Write("Print receipt (Y/N): ");

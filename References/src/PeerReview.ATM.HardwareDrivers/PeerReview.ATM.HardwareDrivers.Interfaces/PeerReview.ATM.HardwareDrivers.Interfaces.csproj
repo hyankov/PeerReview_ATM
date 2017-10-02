@@ -42,10 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanknoteKind.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\CardFactory.cs" />
-    <Compile Include="Exceptions\BaseCashDispenserException.cs" />
-    <Compile Include="Exceptions\InsufficientAvailableCashException.cs" />
     <Compile Include="Drivers\IPrinterDriver.cs" />
     <Compile Include="Drivers\ICashDispenserDriver.cs" />
     <Compile Include="Drivers\ICardReaderDriver.cs" />

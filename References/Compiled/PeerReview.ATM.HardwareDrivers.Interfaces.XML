@@ -4,6 +4,36 @@
         <name>PeerReview.ATM.HardwareDrivers.Interfaces</name>
     </assembly>
     <members>
+        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind">
+            <summary>
+            Enumeration of the possible banknote kinds
+            </summary>
+        </member>
+        <member name="F:PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind._5">
+            <summary>
+            Five
+            </summary>
+        </member>
+        <member name="F:PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind._10">
+            <summary>
+            Ten
+            </summary>
+        </member>
+        <member name="F:PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind._20">
+            <summary>
+            Twenty
+            </summary>
+        </member>
+        <member name="F:PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind._50">
+            <summary>
+            Fifty
+            </summary>
+        </member>
+        <member name="F:PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind._100">
+            <summary>
+            Hundred
+            </summary>
+        </member>
         <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.Cards.Card">
             <summary>
             Emulates a hard-copy bank card
@@ -52,38 +82,6 @@
             </list>
             </returns>
         </member>
-        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.BaseCashDispenserException">
-            <summary>
-            A base class for all Cash Dispenser exceptions
-            </summary>
-        </member>
-        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.BaseCashDispenserException.#ctor">
-            <summary>
-            Creates a new instance
-            </summary>
-        </member>
-        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.BaseCashDispenserException.#ctor(System.String)">
-            <summary>
-            Creates a new instance and initializes the message of the exception
-            </summary>
-            <param name="message">The message of the exception</param>
-        </member>
-        <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException">
-            <summary>
-            An exception representing insufficient available cash in the dispenser
-            </summary>
-        </member>
-        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException.#ctor">
-            <summary>
-            Creates a new instance
-            </summary>
-        </member>
-        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException.#ctor(System.String)">
-            <summary>
-            Creates a new instance and initialize the message
-            </summary>
-            <param name="message">The message of the exception</param>
-        </member>
         <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.Drivers.IPrinterDriver">
             <summary>
             Interface to the printers
@@ -101,21 +99,19 @@
             Interface to the cash dispensers
             </summary>
         </member>
-        <member name="P:PeerReview.ATM.HardwareDrivers.Interfaces.Drivers.ICashDispenserDriver.AvailableAmount">
+        <member name="P:PeerReview.ATM.HardwareDrivers.Interfaces.Drivers.ICashDispenserDriver.Inventory">
             <summary>
-            Gets the available amount of cash in the ATM
+            Gets the available banknotes in the ATM
             </summary>
         </member>
-        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Drivers.ICashDispenserDriver.Dispense(System.Int32)">
+        <member name="M:PeerReview.ATM.HardwareDrivers.Interfaces.Drivers.ICashDispenserDriver.Dispense(System.Collections.Generic.Dictionary{PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind,System.Int32})">
             <summary>
             Dispenses cash
             </summary>
-            <param name="amount">The amount of cash to be dispensed. Must be a positive numbr.</param>
+            <param name="banknotes">The banknotes to be dispensed.</param>
             <exception cref="T:System.ArgumentOutOfRangeException">
-            If <paramref name="amount"/> is less or equal to 0.
-            </exception>
-            <exception cref="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException">
-            If <see cref="P:PeerReview.ATM.HardwareDrivers.Interfaces.Drivers.ICashDispenserDriver.AvailableAmount"/> is less than <paramref name="amount"/>.
+            If the sum of <paramref name="banknotes"/> is less or equal to 0 or if any of the
+            banknotes is unavailable
             </exception>
         </member>
         <member name="T:PeerReview.ATM.HardwareDrivers.Interfaces.Drivers.ICardReaderDriver">

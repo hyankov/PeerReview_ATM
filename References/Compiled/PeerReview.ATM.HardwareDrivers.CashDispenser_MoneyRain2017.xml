@@ -15,21 +15,19 @@
             Creates a new instance
             </summary>
         </member>
-        <member name="P:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.AvailableAmount">
+        <member name="P:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.Inventory">
             <summary>
-            Gets the available amount of cash in the ATM
+            Gets the available banknotes in the ATM
             </summary>
         </member>
-        <member name="M:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.Dispense(System.Int32)">
+        <member name="M:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.Dispense(System.Collections.Generic.Dictionary{PeerReview.ATM.HardwareDrivers.Interfaces.BanknoteKind,System.Int32})">
             <summary>
             Dispenses cash
             </summary>
-            <param name="amount">The amount of cash to be dispensed. Must be a positive numbr.</param>
+            <param name="banknotes">The banknotes to be dispensed.</param>
             <exception cref="T:System.ArgumentOutOfRangeException">
-            If <paramref name="amount"/> is less or equal to 0.
-            </exception>
-            <exception cref="T:PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions.InsufficientAvailableCashException">
-            If <see cref="P:PeerReview.ATM.HardwareDrivers.CashDispenser_MoneyRain2017.CashDispenserMoneyRain2017Driver.AvailableAmount"/> is less than <paramref name="amount"/>.
+            If the sum of <paramref name="banknotes"/> is less or equal to 0 or if any of the
+            banknotes is unavailable
             </exception>
         </member>
     </members>

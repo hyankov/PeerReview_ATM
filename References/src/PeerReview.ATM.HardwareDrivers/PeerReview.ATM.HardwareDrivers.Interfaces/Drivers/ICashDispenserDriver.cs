@@ -1,7 +1,7 @@
 ﻿namespace PeerReview.ATM.HardwareDrivers.Interfaces.Drivers
 {
     using System;
-    using PeerReview.ATM.HardwareDrivers.Interfaces.Exceptions;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Interface to the cash dispensers
@@ -9,20 +9,18 @@
     public interface ICashDispenserDriver
     {
         /// <summary>
-        /// Gets the available amount of cash in the ATM
+        /// Gets the available banknotes in the ATM
         /// </summary>
-        int AvailableAmount { get; }
+        Dictionary<BanknoteKind, int> Inventory { get; }
 
         /// <summary>
         /// Dispenses cash
         /// </summary>
-        /// <param name="amount">The amount of cash to be dispensed. Must be a positive numbr.</param>
+        /// <param name="banknotes">The banknotes to be dispensed.</param>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// If <paramref name="amount"/> is less or equal to 0.
+        /// If the sum of <paramref name="banknotes"/> is less or equal to 0 or if any of the
+        /// banknotes is unavailable
         /// </exception>
-        /// <exception cref="InsufficientAvailableCashException">
-        /// If <see cref="AvailableAmount"/> is less than <paramref name="amount"/>.
-        /// </exception>
-        void Dispense(int amount);
+        void Dispense(Dictionary<BanknoteKind, int> banknotes);
     }
 }
