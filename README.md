@@ -24,8 +24,9 @@ Basic workflow should be followed:
    - Withdraw - the amount of money cannot be larger than the machine can dispense
      - A predefined amount of money (20, 40, 80, 100, 160, 200 or 400)
      - A custom amount
-     **Note:** the software must correctly control the _cash dispenser_ driver - it must tell it specifically what amount of what kind of banknotes should be dispensed. **It is desired that the largest banknotes are dispensed first, with priority**
    - Cancel - the _card reader_ ejects the card, workflow is complete
+   
+   **Note:** the software must correctly control the _cash dispenser_ driver - it must tell it specifically what amount of what kind of banknotes should be dispensed. **It is desired that the largest banknotes are dispensed first, with priority**
 4. Withdraw:
    - Allow only if the selected amount is available in the ATM. Otherwise cancel.
    - Get the bank account # out of the card
