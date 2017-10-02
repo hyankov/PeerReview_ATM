@@ -18,6 +18,14 @@ Implement software for controlling an ATM, using the Windows stack. ATM hardware
 
 Visual appeal of the UI **will not** be commented.
 
+**How to submit your work**
+
+1. Fork this repository.
+2. Implement under [Implementation.PeerReview.ATM](https://github.com/hyankov/PeerReview_ATM/tree/master/Implementation/Implementation.PeerReview.ATM).
+3. Check-in **right before** the peer review.
+
+During the peer review your code will be pulled on the presenters machine, which runs **MSSQL Server 2016** and **VS 2015**.
+
 **Functional Requirements**
 
 Basic workflow should be followed:
